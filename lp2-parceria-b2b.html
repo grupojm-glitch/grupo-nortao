@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grupo Nortão — Programa de Parceria B2B | Fornecimento de Peças para Pickups</title>
+  <meta name="description" content="Programa de parceria B2B para oficinas, mecânicas, autopeças e revendedores. Condições especiais, atendimento comercial dedicado e fornecimento recorrente de peças originais para pickups." />
+
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+  <meta property="og:title" content="Grupo Nortão — Parceria B2B para Peças de Pickups" />
+  <meta property="og:description" content="Fornecimento recorrente de peças originais para pickups. Condições comerciais para oficinas, mecânicas, autopeças e revendedores." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+    :root{
+      --d:#061624;--n9:#081F33;--n8:#0B2C4A;--n7:#0E3A5E;--n6:#124A74;
+      --g:#F5B301;--gd:#C48F01;--gs:#FEF3C7;--gp:#8B6914;
+      --s9:#0F172A;--s7:#334155;--s5:#64748B;--s3:#CBD5E1;--s1:#F1F5F9;--s0:#F8FAFC;
+      --w:#FFFFFF;--am:#F59E0B;--wa:#25D366;--rd:#EF4444;
+      --fh:'Montserrat',system-ui,sans-serif;--fb:'Inter',system-ui,sans-serif;
+      --mx:1160px;--e:cubic-bezier(.16,1,.3,1)
+    }
+
+    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+    body{font-family:var(--fb);color:var(--s7);background:var(--w);overflow-x:hidden;line-height:1.6;font-size:16px}
+    img{max-width:100%;display:block}a{color:inherit;text-decoration:none}
+    ::selection{background:var(--n7);color:#fff}
+
+    .w{max-width:var(--mx);margin:0 auto;padding:0 1.25rem}
+    .w--n{max-width:760px}
+    .tc{text-align:center}.mx{margin-left:auto;margin-right:auto}
+
+    /* ---- ANIM ---- */
+    @keyframes rIn{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes fIn{from{opacity:0}to{opacity:1}}
+    @keyframes pls{0%,100%{transform:scale(1);opacity:.35}50%{transform:scale(1.45);opacity:0}}
+    .ri{animation:rIn .7s var(--e) both}
+    .r1{animation-delay:.08s}.r2{animation-delay:.16s}.r3{animation-delay:.24s}.r4{animation-delay:.32s}.r5{animation-delay:.4s}
+
+    /* ---- STRIP ---- */
+    .strip{background:var(--d);padding:.5rem 0;font-size:.6875rem;font-weight:600;color:rgba(255,255,255,.35);text-align:center;letter-spacing:.07em;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,.03)}
+    .strip em{color:var(--g);font-style:normal}
+
+    /* ---- NAV ---- */
+    .nav{position:sticky;top:0;z-index:100;background:rgba(10,22,40,.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:.875rem 0;border-bottom:1px solid rgba(255,255,255,.04)}
+    .nav__in{display:flex;align-items:center;justify-content:space-between}
+    .nav__logo{font-family:var(--fh);font-size:1.375rem;color:#fff}.nav__logo span{color:var(--g)}
+    .nav__tag{display:inline-flex;align-items:center;gap:.375rem;padding:.3rem .75rem;border-radius:100px;background:rgba(245,179,1,.08);border:1px solid rgba(245,179,1,.12);color:var(--g);font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-left:.75rem}
+    .nav__cta{display:inline-flex;align-items:center;gap:.4rem;padding:.55rem 1.15rem;background:var(--g);color:var(--d);border-radius:100px;font-size:.8rem;font-weight:700;transition:all .25s var(--e)}
+    .nav__cta:hover{background:var(--gd);transform:translateY(-1px);box-shadow:0 4px 18px rgba(245,179,1,.25)}
+
+    /* ---- BUTTONS ---- */
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-family:var(--fb);font-weight:700;font-size:.9375rem;padding:1rem 2rem;border-radius:12px;border:none;cursor:pointer;transition:all .25s var(--e);white-space:nowrap;text-decoration:none}
+    .btn--g{background:var(--g);color:var(--d)}.btn--g:hover{background:var(--gd);transform:translateY(-2px);box-shadow:0 8px 28px rgba(245,179,1,.2)}
+    .btn--wa{background:var(--wa);color:#fff}.btn--wa:hover{background:#1fb855;transform:translateY(-2px);box-shadow:0 8px 28px rgba(37,211,102,.3)}
+    .btn--ol{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.18)}.btn--ol:hover{border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.04)}
+    .btn--dk{background:var(--n7);color:#fff}.btn--dk:hover{background:var(--n6);transform:translateY(-2px)}
+    .btn--gh{background:transparent;color:var(--n7);border:1.5px solid var(--s3)}.btn--gh:hover{border-color:var(--n7);background:var(--s1)}
+    .btn--lg{padding:1.125rem 2.25rem;font-size:1rem;border-radius:14px}
+
+    /* ---- OVERLINE / TITLES ---- */
+    .ov{display:inline-block;font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:.75rem}
+    .ov--g{color:var(--g)}.ov--d{color:var(--gp)}
+    .sh{font-family:var(--fh);font-size:clamp(1.75rem,4vw,2.625rem);line-height:1.12;letter-spacing:-.02em;margin-bottom:.875rem;text-wrap:balance}
+    .sp{font-size:1rem;line-height:1.7;max-width:560px}
+    .sp--l{color:rgba(255,255,255,.5)}.sp--m{color:var(--s5)}
+
+    /* ---- SECTIONS ---- */
+    .sec{padding:5rem 0}
+    .sec--dk{background:var(--n9);color:#fff}
+    .sec--dp{background:var(--d);color:#fff}
+    .sec--lt{background:var(--s0)}
+
+    /* ============================================
+       1. HERO — Parceria B2B
+       ============================================ */
+    .hero{position:relative;min-height:94vh;display:flex;align-items:center;background:linear-gradient(155deg,var(--d) 0%,var(--n8) 45%,#081F33 100%);padding:5rem 0 4.5rem;overflow:hidden}
+    .hero__bg{position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.012) 0,rgba(255,255,255,.012) 1px,transparent 1px,transparent 90px);mask-image:linear-gradient(180deg,black 20%,transparent 75%);pointer-events:none}
+    .hero__orb{position:absolute;border-radius:50%;pointer-events:none}
+    .hero__orb--1{width:600px;height:600px;top:-15%;right:-8%;background:radial-gradient(circle,rgba(245,179,1,.06) 0%,transparent 55%)}
+    .hero__orb--2{width:350px;height:350px;bottom:-8%;left:-4%;background:radial-gradient(circle,rgba(20,45,84,.25) 0%,transparent 55%)}
+    .hero__ct{position:relative;z-index:2;max-width:660px}
+
+    .hero__tag{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem 1rem;border-radius:100px;background:rgba(245,179,1,.08);border:1px solid rgba(245,179,1,.15);color:var(--g);font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:1.75rem}
+    .hero__h{font-family:var(--fh);font-size:clamp(2.25rem,6vw,3.75rem);line-height:1.06;color:#fff;letter-spacing:-.025em;margin-bottom:1.5rem}
+    .hero__h em{color:var(--g);font-style:italic}
+    .hero__p{font-size:1.0625rem;line-height:1.75;color:rgba(255,255,255,.5);max-width:520px;margin-bottom:2.5rem}
+    .hero__btns{display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:1.25rem}
+    .hero__micro{display:flex;gap:1.5rem;flex-wrap:wrap;font-size:.75rem;color:rgba(255,255,255,.3);font-weight:500}
+    .hero__micro span{display:flex;align-items:center;gap:.3rem}.hero__micro svg{color:var(--g)}
+
+    /* ============================================
+       2. DOR E IDENTIFICAÇÃO
+       ============================================ */
+    .pain__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;margin-top:2.5rem;align-items:center}
+    .pain__list{display:flex;flex-direction:column;gap:.875rem}
+    .pain__item{display:flex;align-items:flex-start;gap:.75rem;padding:1rem 1.25rem;border-radius:12px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);transition:border-color .3s}
+    .pain__item:hover{border-color:rgba(239,68,68,.2)}
+    .pain__ico{width:36px;height:36px;border-radius:8px;background:rgba(239,68,68,.08);color:var(--rd);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .pain__item h4{font-size:.875rem;font-weight:700;color:#fff;margin-bottom:.125rem}
+    .pain__item p{font-size:.75rem;color:rgba(255,255,255,.4);line-height:1.5}
+
+    /* ============================================
+       3. SOLUÇÃO
+       ============================================ */
+    .sol__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:3rem;align-items:center;margin-top:2rem}
+    .sol__list{display:flex;flex-direction:column;gap:1rem}
+    .sol__item{display:flex;align-items:flex-start;gap:.75rem}
+    .sol__ico{width:28px;height:28px;border-radius:50%;background:var(--gs);color:var(--gp);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+    .sol__item h4{font-size:.9375rem;font-weight:700;color:var(--s9);margin-bottom:.125rem}
+    .sol__item p{font-size:.875rem;color:var(--s5);line-height:1.6}
+
+    /* ============================================
+       4. DIFERENCIAIS
+       ============================================ */
+    .diff__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:2.5rem}
+    .diff__card{padding:1.75rem;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);transition:all .3s var(--e)}
+    .diff__card:hover{background:rgba(255,255,255,.06);border-color:rgba(245,179,1,.2);transform:translateY(-2px)}
+    .diff__num{font-family:var(--fh);font-size:2rem;color:var(--g);opacity:.6;line-height:1;margin-bottom:.625rem}
+    .diff__card h3{font-weight:700;font-size:.9375rem;color:#fff;margin-bottom:.375rem}
+    .diff__card p{font-size:.8rem;line-height:1.6;color:rgba(255,255,255,.4)}
+
+    /* ============================================
+       5. PARA QUEM É
+       ============================================ */
+    .who__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:2.5rem}
+    .who__card{padding:1.75rem;border-radius:14px;border:1px solid var(--s3);background:#fff;text-align:center;transition:all .3s var(--e)}
+    .who__card:hover{border-color:var(--g);box-shadow:0 8px 30px rgba(10,22,40,.06);transform:translateY(-2px)}
+    .who__ico{width:52px;height:52px;border-radius:12px;background:var(--gs);color:var(--gp);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
+    .who__card h3{font-weight:700;font-size:.9375rem;color:var(--s9);margin-bottom:.25rem}
+    .who__card p{font-size:.8125rem;color:var(--s5);line-height:1.5}
+
+    /* ============================================
+       6. COMO FUNCIONA
+       ============================================ */
+    .how__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.5rem;margin-top:2.5rem}
+    .how__card{text-align:center;padding:2rem 1.5rem}
+    .how__n{font-family:var(--fh);font-size:3rem;color:var(--s1);line-height:1;margin-bottom:.5rem}
+    .how__ico{width:52px;height:52px;border-radius:50%;background:var(--n7);color:#fff;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
+    .how__card h4{font-weight:700;font-size:1rem;color:var(--s9);margin-bottom:.375rem}
+    .how__card p{font-size:.875rem;line-height:1.6;color:var(--s5)}
+
+    /* ============================================
+       7. CONFIANÇA / AUTORIDADE
+       ============================================ */
+    .auth__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin-top:2.5rem}
+    .auth__card{text-align:center;padding:1.75rem 1rem;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05)}
+    .auth__val{font-family:var(--fh);font-size:2.25rem;color:#fff;line-height:1.1;margin-bottom:.25rem}
+    .auth__lbl{font-size:.75rem;color:rgba(255,255,255,.35);font-weight:500}
+
+    /* ============================================
+       8. NÍVEIS DE PARCERIA
+       ============================================ */
+    .tier__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem;margin-top:2.5rem}
+    .tier__card{padding:2.5rem 2rem;border-radius:18px;border:2px solid var(--s3);background:#fff;position:relative;transition:all .3s var(--e)}
+    .tier__card:hover{box-shadow:0 12px 40px rgba(10,22,40,.08);transform:translateY(-3px)}
+    .tier__card--hl{border-color:var(--g);background:linear-gradient(180deg,rgba(245,179,1,.02) 0%,#fff 40%)}
+    .tier__card--hl .tier__badge{display:inline-flex}
+    .tier__badge{display:none;position:absolute;top:-12px;right:1.5rem;padding:.35rem 1rem;border-radius:100px;background:var(--g);color:var(--d);font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+    .tier__name{font-family:var(--fh);font-size:1.5rem;color:var(--s9);margin-bottom:.25rem}
+    .tier__desc{font-size:.875rem;color:var(--s5);margin-bottom:1.5rem;line-height:1.5}
+    .tier__list{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.75rem}
+    .tier__li{display:flex;align-items:center;gap:.5rem;font-size:.8125rem;color:var(--s7)}
+    .tier__li svg{color:var(--g);flex-shrink:0}
+    .tier__li--no{color:var(--s3)}.tier__li--no svg{color:var(--s3)}
+
+    /* ============================================
+       9. OBJEÇÕES
+       ============================================ */
+    .obj__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1rem;margin-top:2.5rem}
+    .obj__card{display:flex;align-items:flex-start;gap:.75rem;padding:1.5rem;border-radius:12px;border:1px solid var(--s3);background:#fff}
+    .obj__ico{width:32px;height:32px;border-radius:8px;background:var(--gs);color:var(--gp);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+    .obj__card h4{font-size:.875rem;font-weight:700;color:var(--s9);margin-bottom:.25rem}
+    .obj__card p{font-size:.8125rem;color:var(--s5);line-height:1.55}
+
+    /* ============================================
+       10. CTA FORTE + FORMULÁRIO
+       ============================================ */
+    .form-sec{padding:5rem 0;background:linear-gradient(155deg,var(--d) 0%,var(--n8) 50%,#081F33 100%);position:relative;overflow:hidden}
+    .form-sec__glow{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(245,179,1,.06) 0%,transparent 55%);top:-20%;right:-5%;pointer-events:none}
+    .form__wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:3rem;align-items:start;position:relative;z-index:2}
+    .form__box{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:2.5rem}
+    .form__row{display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:.75rem}
+    .form__field{flex:1;min-width:180px;display:flex;flex-direction:column;gap:.3rem}
+    .form__label{font-size:.75rem;font-weight:600;color:rgba(255,255,255,.5)}
+    .form__input{padding:.875rem 1rem;border:1.5px solid rgba(255,255,255,.08);border-radius:10px;background:rgba(255,255,255,.04);color:#fff;font-size:.9rem;font-family:var(--fb);outline:none;transition:border-color .2s}
+    .form__input:focus{border-color:var(--g)}
+    .form__input::placeholder{color:rgba(255,255,255,.2)}
+    .form__input option{background:var(--n9);color:#fff}
+
+    /* ============================================
+       11. FAQ
+       ============================================ */
+    .faq__list{display:flex;flex-direction:column;gap:.5rem;margin-top:2.5rem}
+    .faq__item{border:1px solid var(--s3);border-radius:10px;background:#fff;overflow:hidden}
+    .faq__q{width:100%;display:flex;justify-content:space-between;align-items:center;padding:1.25rem 1.5rem;font-size:.9375rem;font-weight:600;font-family:var(--fb);color:var(--s9);text-align:left;cursor:pointer;background:none;border:none;gap:1rem}
+    .faq__q svg{flex-shrink:0;transition:transform .3s;color:var(--s5)}
+    .faq__q[aria-expanded="true"] svg{transform:rotate(180deg)}
+    .faq__q[aria-expanded="true"]{background:var(--s0)}
+    .faq__a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease;padding:0 1.5rem}
+    .faq__a[data-open="true"]{max-height:350px;padding:0 1.5rem 1.25rem}
+    .faq__a p{font-size:.9375rem;line-height:1.7;color:var(--s5)}
+
+    /* ---- FOOTER ---- */
+    .ft{background:var(--d);padding:2.5rem 0 1.5rem;border-top:1px solid rgba(255,255,255,.03)}
+    .ft__in{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+    .ft__logo{font-family:var(--fh);font-size:1.25rem;color:#fff}.ft__logo span{color:var(--g)}
+    .ft__copy{font-size:.75rem;color:rgba(255,255,255,.25)}
+    .ft__links{display:flex;gap:1.25rem;font-size:.75rem}.ft__links a{color:rgba(255,255,255,.35);transition:color .2s}.ft__links a:hover{color:#fff}
+
+    /* ---- WA FLOAT ---- */
+    .waf{position:fixed;bottom:1.25rem;right:1.25rem;z-index:900;width:58px;height:58px;border-radius:50%;background:var(--wa);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform .25s var(--e);animation:rIn .5s var(--e) 1.5s both}
+    .waf:hover{transform:scale(1.08)}
+    .waf__p{position:absolute;inset:0;border-radius:50%;background:var(--wa);animation:pls 2s ease-in-out infinite;z-index:-1}
+
+    @media(max-width:768px){
+      .hero{min-height:auto;padding:3.5rem 0 3rem}
+      .hero__h{font-size:2.1rem}
+      .sec{padding:3.5rem 0}
+      .form__row{flex-direction:column}
+      .tier__grid{grid-template-columns:1fr}
+      .nav__tag{display:none}
+    }
+
+    /* Chevron SVG for FAQ */
+    .chev{width:18px;height:18px}
+  </style>
+</head>
+<body>
+
+  <!-- STRIP -->
+  <div class="strip"><em>Programa B2B</em> &nbsp;·&nbsp; Condições especiais para parceiros &nbsp;·&nbsp; Fornecimento recorrente</div>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="w nav__in">
+      <div style="display:flex;align-items:center">
+        <div class="nav__logo">Grupo <span>Nortão</span></div>
+        <span class="nav__tag">B2B</span>
+      </div>
+      <a href="#cadastro" class="nav__cta">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Quero Ser Parceiro
+      </a>
+    </div>
+  </header>
+
+  <!-- ======== 1. HERO ======== -->
+  <section class="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__orb hero__orb--1"></div>
+    <div class="hero__orb hero__orb--2"></div>
+    <div class="w">
+      <div class="hero__ct">
+        <div class="hero__tag ri">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          Programa de Parceria B2B
+        </div>
+        <h1 class="hero__h ri r1">Sua oficina ou loja merece um fornecedor de peças que <em>funcione de verdade.</em></h1>
+        <p class="hero__p ri r2">O Grupo Nortão oferece fornecimento recorrente de peças seminovas originais para pickups, com condições comerciais exclusivas, atendimento dedicado e uma operação pensada para quem precisa comprar com frequência.</p>
+        <div class="hero__btns ri r3">
+          <a href="#cadastro" class="btn btn--g btn--lg">Solicitar Parceria B2B</a>
+          <a href="https://wa.me/5500000000000?text=Olá,%20sou%20oficina/loja%20e%20gostaria%20de%20conhecer%20o%20programa%20de%20parceria%20B2B." target="_blank" rel="noopener" class="btn btn--ol btn--lg">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Falar com Comercial
+          </a>
+        </div>
+        <div class="hero__micro ri r4">
+          <span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Cadastro em 2 min</span>
+          <span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Análise em 48h</span>
+          <span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Condições exclusivas</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== 2. DOR E IDENTIFICAÇÃO ======== -->
+  <section class="sec--dk sec">
+    <div class="w">
+      <div class="pain__grid">
+        <div>
+          <span class="ov ov--g">O problema</span>
+          <h2 class="sh" style="color:#fff">Você sabe como é depender de fornecedores que não funcionam.</h2>
+          <p class="sp sp--l">Quem trabalha com peças de pickup no dia a dia conhece essas dores. Nós também — e decidimos resolver.</p>
+        </div>
+        <div class="pain__list">
+          <div class="pain__item"><div class="pain__ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div><div><h4>Fornecedores desorganizados</h4><p>Sem padrão, sem previsibilidade. Cada compra é uma surpresa.</p></div></div>
+          <div class="pain__item"><div class="pain__ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><h4>Demora de resposta</h4><p>O cliente espera, o veículo parado, e o fornecedor não responde.</p></div></div>
+          <div class="pain__item"><div class="pain__ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div><div><h4>Risco de peça errada</h4><p>Sem conferência de compatibilidade, o erro cai no seu colo.</p></div></div>
+          <div class="pain__item"><div class="pain__ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div><h4>Margem apertada</h4><p>Preço sem lógica, sem tabela, sem condição real pra quem compra mais.</p></div></div>
+          <div class="pain__item"><div class="pain__ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><h4>Procedência duvidosa</h4><p>Peça sem código, sem foto real, sem garantia. Risco constante.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== 3. SOLUÇÃO ======== -->
+  <section class="sec">
+    <div class="w">
+      <div class="sol__grid">
+        <div>
+          <span class="ov ov--d">A solução</span>
+          <h2 class="sh">O Grupo Nortão foi construído para resolver isso.</h2>
+          <p class="sp sp--m" style="margin-bottom:1.5rem">Não somos mais um fornecedor. Somos uma operação estruturada de peças para pickups, pensada para quem precisa comprar com frequência, segurança e previsibilidade.</p>
+          <a href="#cadastro" class="btn btn--dk">Quero conhecer as condições</a>
+        </div>
+        <div class="sol__list">
+          <div class="sol__item"><div class="sol__ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><div><h4>Fornecimento organizado</h4><p>Estoque conferido, classificado e documentado. Sem improviso.</p></div></div>
+          <div class="sol__item"><div class="sol__ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><div><h4>Relacionamento comercial</h4><p>Atendimento dedicado, canal direto e condições que melhoram com o tempo.</p></div></div>
+          <div class="sol__item"><div class="sol__ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><div><h4>Foco exclusivo em pickups</h4><p>Conhecimento técnico, estoque estratégico e compatibilidade garantida.</p></div></div>
+          <div class="sol__item"><div class="sol__ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><div><h4>Mais previsibilidade</h4><p>Tabela B2B, resposta rápida e processo claro do pedido à entrega.</p></div></div>
+          <div class="sol__item"><div class="sol__ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><div><h4>Crescimento conjunto</h4><p>O Grupo Nortão quer crescer junto com seus parceiros. Sua operação forte é boa pra gente também.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== 4. DIFERENCIAIS ======== -->
+  <section class="sec--dk sec">
+    <div class="w">
+      <div class="tc" style="margin-bottom:1rem"><span class="ov ov--g">Diferenciais</span><h2 class="sh" style="color:#fff">O que muda quando a Nortão é seu fornecedor</h2></div>
+      <div class="diff__grid">
+        <div class="diff__card"><div class="diff__num">01</div><h3>Estoque conferido</h3><p>Peças originais com código verificado, fotos reais e condição documentada.</p></div>
+        <div class="diff__card"><div class="diff__num">02</div><h3>Tabela B2B exclusiva</h3><p>Preços diferenciados que fazem sentido pra quem compra com recorrência.</p></div>
+        <div class="diff__card"><div class="diff__num">03</div><h3>Atendimento comercial</h3><p>Canal dedicado com time que entende sua operação e responde rápido.</p></div>
+        <div class="diff__card"><div class="diff__num">04</div><h3>Compatibilidade técnica</h3><p>Conferimos aplicação antes do envio. Menos devolução, menos retrabalho.</p></div>
+        <div class="diff__card"><div class="diff__num">05</div><h3>Logística nacional</h3><p>Envio para os 27 estados com embalagem reforçada e rastreamento.</p></div>
+        <div class="diff__card"><div class="diff__num">06</div><h3>Visão de parceria</h3><p>Não queremos venda avulsa. Queremos relacionamento, recorrência e confiança.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== 5. PARA QUEM É ======== -->
+  <section class="sec">
+    <div class="w">
+      <div class="tc" style="margin-bottom:1rem"><span class="ov ov--d">Para quem é</span><h2 class="sh">A parceria B2B é ideal para</h2><p class="sp sp--m mx">Se você compra peças de pickup com frequência e precisa de um fornecedor confiável, essa parceria foi pensada pra você.</p></div>
+      <div class="who__grid">
+        <div class="who__card"><div class="who__ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div><h3>Mecânicas</h3><p>Que compram peças para aplicação em veículos de clientes.</p></div>
+        <div class="who__card"><div class="who__ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><rect x="2" y="7" width="20" height="5"/></svg></div><h3>Lojas de pickup</h3><p>Que precisam de fornecimento regular e estoque confiável.</p></div>
+        <div class="who__card"><div class="who__ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m16.5 9.4-9-5.19M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div><h3>Autopeças</h3><p>Multimarcas que atendem segmento de pickups e utilitários.</p></div>
+        <div class="who__card"><div class="who__ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3>Revendedores</h3><p>Que operam regional e precisam de margem e confiança na peça.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== 6. COMO FUNCIONA ======== -->
+  <section class="sec--lt sec">
+    <div class="w">
+      <div class="tc" style="margin-bottom:1rem"><span class="ov ov--d">Processo</span><h2 class="sh">Como começar a parceria</h2><p class="sp sp--m mx">Em 4 passos você entra no programa e começa a comprar com condições diferenciadas.</p></div>
+      <div class="how__grid">
+        <div class="how__card"><div class="how__n">01</div><div class="how__ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div><h4>Cadastre sua empresa</h4><p>Preencha o formulário com dados da sua operação.</p></div>
+        <div class="how__card"><div class="how__n">02</div><div class="how__ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div><h4>Análise de perfil</h4><p>Nosso time comercial avalia e define o melhor nível de parceria.</p></div>
+        <div class="how__card"><div class="how__n">03</div><div class="how__ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg></div><h4>Canal ativado</h4><p>Você recebe acesso ao atendimento comercial dedicado.</p></div>
+        <div class="how__card"><div class="how__n">04</div><div class="how__ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div><h4>Compre com condições</h4><p>Peça com tabela B2B, prioridade e suporte contínuo.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== 7. AUTORIDADE ======== -->
+  <section class="sec--dk sec">
+    <div class="w">
+      <div class="tc" style="margin-bottom:1rem"><span class="ov ov--g">Estrutura</span><h2 class="sh" style="color:#fff">Uma operação preparada para atender sua empresa</h2></div>
+      <div class="auth__grid">
+        <div class="auth__card"><div class="auth__val">2.500+</div><div class="auth__lbl">Peças conferidas</div></div>
+        <div class="auth__card"><div class="auth__val">27</div><div class="auth__lbl">Estados atendidos</div></div>
+        <div class="auth__card"><div class="auth__val">100%</div><div class="auth__lbl">Peças originais</div></div>
+        <div class="auth__card"><div class="auth__val">8+</div><div class="auth__lbl">Anos de mercado</div></div>
+        <div class="auth__card"><div class="auth__val">98%</div><div class="auth__lbl">Satisfação</div></div>
+        <div class="auth__card"><div class="auth__val">24h</div><div class="auth__lbl">Resposta comercial</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== 8. NÍVEIS DE PARCERIA ======== -->
+  <section class="sec">
+    <div class="w">
+      <div class="tc" style="margin-bottom:1rem"><span class="ov ov--d">Níveis</span><h2 class="sh">Parceria que cresce com sua operação</h2><p class="sp sp--m mx">Quanto mais sua empresa compra, melhores ficam as condições. Três níveis, um caminho de crescimento.</p></div>
+      <div class="tier__grid">
+        <!-- Bronze -->
+        <div class="tier__card">
+          <div class="tier__name">Bronze</div>
+          <div class="tier__desc">Para quem está começando a parceria e quer testar o fornecimento.</div>
+          <div class="tier__list">
+            <div class="tier__li"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Tabela B2B inicial</div>
+            <div class="tier__li"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Atendimento comercial</div>
+            <div class="tier__li"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Conferência de compatibilidade</div>
+            <div class="tier__li"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Garantia padrão</div>
+            <div class="tier__li tier__li--no"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/></svg> Canal dedicado</div>
+            <div class="tier__li tier__li--no"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/></svg> Acesso antecipado</div>
+          </div>
+          <a href="#cadastro" class="btn btn--gh" style="width:100%">Começar como Bronze</a>
+        </div>
+        <!-- Prata -->
+        <div class="tier__card tier__card--hl">
+          <div class="tier__badge">Mais popular</div>
+          <div class="tier__name">Prata</div>
+          <div class="tier__desc">Para operações recorrentes que precisam de prioridade e melhor preço.</div>
+          <div class="tier__list">
+            <div class="tier__li"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Tabela B2B aprimorada</div>
+            <div class="tier__li"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Atendimento prioritário</div>
+            <div class="tier__li"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Conferência de compatibilidade</div>
+            <div class="tier__li"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Garantia estendida</div>
+            <div class="tier__li"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Canal dedicado</div>
+            <div class="tier__li tier__li--no"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/></svg> Acesso antecipado</div>
+          </div>
+          <a href="#cadastro" class="btn btn--g" style="width:100%">Solicitar nível Prata</a>
+        </div>
+        <!-- Ouro -->
+        <div class="tier__card">
+          <div class="tier__name">Ouro</div>
+          <div class="tier__desc">Para parceiros estratégicos com volume alto e relacionamento consolidado.</div>
+          <div class="tier__list">
+            <div class="tier__li"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Melhor tabela B2B</div>
+            <div class="tier__li"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Atendimento VIP</div>
+            <div class="tier__li"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Conferência de compatibilidade</div>
+            <div class="tier__li"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Garantia estendida</div>
+            <div class="tier__li"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Canal dedicado</div>
+            <div class="tier__li"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Acesso antecipado a peças</div>
+          </div>
+          <a href="#cadastro" class="btn btn--dk" style="width:100%">Falar sobre nível Ouro</a>
+        </div>
+      </div>
+      <p class="tc" style="margin-top:1.5rem;font-size:.8125rem;color:var(--s5)">O nível é definido com base no perfil da empresa, volume e recorrência. Após o cadastro, nosso comercial orienta o melhor caminho.</p>
+    </div>
+  </section>
+
+  <!-- ======== 9. OBJEÇÕES ======== -->
+  <section class="sec--lt sec">
+    <div class="w">
+      <div class="tc" style="margin-bottom:1rem"><span class="ov ov--d">Respostas diretas</span><h2 class="sh">Talvez você esteja pensando...</h2></div>
+      <div class="obj__grid">
+        <div class="obj__card"><div class="obj__ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><h4>"Vocês atendem minha região?"</h4><p>Sim. Enviamos para todos os 27 estados brasileiros com logística profissional e rastreamento.</p></div></div>
+        <div class="obj__card"><div class="obj__ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><rect x="2" y="7" width="20" height="5"/></svg></div><div><h4>"Preciso ter loja para participar?"</h4><p>Não necessariamente. Oficinas, MEIs e profissionais do setor automotivo também podem ser parceiros.</p></div></div>
+        <div class="obj__card"><div class="obj__ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div><div><h4>"Como funciona o cadastro?"</h4><p>Preencha o formulário abaixo. Nosso time analisa em até 48h e entra em contato para ativar a parceria.</p></div></div>
+        <div class="obj__card"><div class="obj__ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div><div><h4>"As peças têm procedência?"</h4><p>Sim. 100% originais de fábrica, com código verificado, fotos reais e condição documentada.</p></div></div>
+        <div class="obj__card"><div class="obj__ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><div><h4>"Vocês atendem mecânica pequena?"</h4><p>Sim. A parceria é para qualquer operação que compre peças de pickup com frequência, independente do tamanho.</p></div></div>
+        <div class="obj__card"><div class="obj__ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6"/></svg></div><div><h4>"Existe atendimento comercial?"</h4><p>Sim. Parceiros têm canal dedicado com resposta rápida via WhatsApp comercial.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== 10. FORMULÁRIO + CTA ======== -->
+  <section class="form-sec" id="cadastro">
+    <div class="form-sec__glow"></div>
+    <div class="w">
+      <div class="form__wrap">
+        <div>
+          <span class="ov ov--g">Cadastro B2B</span>
+          <h2 class="sh" style="color:#fff">Solicite sua parceria agora</h2>
+          <p class="sp sp--l" style="margin-bottom:2rem">Preencha seus dados comerciais. Nosso time analisa em até 48h e entra em contato para ativar sua parceria com condições exclusivas.</p>
+          <div style="display:flex;flex-direction:column;gap:1rem;margin-bottom:2rem">
+            <div style="display:flex;align-items:center;gap:.5rem;font-size:.8125rem;color:rgba(255,255,255,.4)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--g)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Cadastro leva menos de 2 minutos</div>
+            <div style="display:flex;align-items:center;gap:.5rem;font-size:.8125rem;color:rgba(255,255,255,.4)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--g)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Análise e retorno em até 48h úteis</div>
+            <div style="display:flex;align-items:center;gap:.5rem;font-size:.8125rem;color:rgba(255,255,255,.4)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--g)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Sem compromisso de volume mínimo</div>
+            <div style="display:flex;align-items:center;gap:.5rem;font-size:.8125rem;color:rgba(255,255,255,.4)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--g)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Seus dados são protegidos (LGPD)</div>
+          </div>
+          <p style="font-size:.875rem;color:rgba(255,255,255,.35);margin-bottom:.5rem">Prefere falar direto?</p>
+          <a href="https://wa.me/5500000000000?text=Olá,%20sou%20empresa%20e%20gostaria%20de%20saber%20sobre%20a%20parceria%20B2B%20do%20Grupo%20Nortão." target="_blank" rel="noopener" class="btn btn--wa">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Comercial
+          </a>
+        </div>
+        <div class="form__box">
+          <h3 style="font-weight:700;font-size:1.0625rem;color:#fff;margin-bottom:1.5rem">Dados da empresa</h3>
+          <div class="form__row">
+            <div class="form__field"><label class="form__label">Nome do responsável *</label><input class="form__input" placeholder="Seu nome completo" maxlength="80"></div>
+            <div class="form__field"><label class="form__label">Empresa *</label><input class="form__input" placeholder="Razão social ou fantasia" maxlength="100"></div>
+          </div>
+          <div class="form__row">
+            <div class="form__field"><label class="form__label">CNPJ *</label><input class="form__input" placeholder="00.000.000/0000-00" maxlength="20"></div>
+            <div class="form__field"><label class="form__label">Tipo de negócio *</label><select class="form__input"><option value="">Selecione</option><option>Oficina mecânica</option><option>Loja de autopeças</option><option>Revendedor</option><option>Funilaria</option><option>Manutenção de frotas</option><option>Outro</option></select></div>
+          </div>
+          <div class="form__row">
+            <div class="form__field"><label class="form__label">WhatsApp *</label><input class="form__input" placeholder="(00) 00000-0000" maxlength="20"></div>
+            <div class="form__field"><label class="form__label">E-mail *</label><input class="form__input" placeholder="comercial@empresa.com" type="email" maxlength="80"></div>
+          </div>
+          <div class="form__row">
+            <div class="form__field"><label class="form__label">Cidade / Estado</label><input class="form__input" placeholder="Ex: São Paulo — SP" maxlength="60"></div>
+          </div>
+          <div style="margin:.75rem 0 1.5rem">
+            <label style="display:flex;align-items:flex-start;gap:.625rem;cursor:pointer">
+              <input type="checkbox" style="margin-top:3px;accent-color:var(--g)">
+              <span style="font-size:.75rem;color:rgba(255,255,255,.4);line-height:1.5">Autorizo o Grupo Nortão a utilizar meus dados para avaliação e comunicação referente ao programa de parceria B2B. <a href="#" style="color:var(--g);text-decoration:underline">Política de Privacidade</a></span>
+            </label>
+          </div>
+          <button class="btn btn--g btn--lg" style="width:100%">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Solicitar Parceria B2B
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== 11. FAQ ======== -->
+  <section class="sec">
+    <div class="w w--n">
+      <div class="tc" style="margin-bottom:1rem"><span class="ov ov--d">FAQ</span><h2 class="sh">Perguntas frequentes sobre a parceria</h2></div>
+      <div class="faq__list">
+        <div class="faq__item"><button class="faq__q" aria-expanded="false" onclick="tF(this)">Preciso ter CNPJ para ser parceiro?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq__a"><p>Sim. O programa é voltado para empresas com CNPJ ativo. MEIs e profissionais autônomos formalizados também são aceitos.</p></div></div>
+        <div class="faq__item"><button class="faq__q" aria-expanded="false" onclick="tF(this)">Qual o volume mínimo de compra?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq__a"><p>Não exigimos volume mínimo para entrar. A tabela diferenciada se aplica a partir do cadastro aprovado, e as condições melhoram com a recorrência.</p></div></div>
+        <div class="faq__item"><button class="faq__q" aria-expanded="false" onclick="tF(this)">Quanto tempo leva para aprovar o cadastro?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq__a"><p>A análise leva até 48h úteis. Após aprovação, ativamos seu canal e você já pode comprar com condições de parceiro.</p></div></div>
+        <div class="faq__item"><button class="faq__q" aria-expanded="false" onclick="tF(this)">Posso comprar para revenda?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq__a"><p>Sim. Muitos parceiros são revendedores. Nossas condições são compatíveis com operações de revenda.</p></div></div>
+        <div class="faq__item"><button class="faq__q" aria-expanded="false" onclick="tF(this)">Como funciona a tabela diferenciada?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq__a"><p>Após aprovação, você recebe acesso a preços exclusivos que não aparecem no site público. Os descontos variam por categoria, volume e nível de parceria.</p></div></div>
+        <div class="faq__item"><button class="faq__q" aria-expanded="false" onclick="tF(this)">Vocês atendem todo o Brasil?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq__a"><p>Sim. Temos logística profissional para todos os 27 estados, com condições especiais de frete para parceiros.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== 12. FECHAMENTO ======== -->
+  <section class="sec--dp sec" style="text-align:center;padding:4.5rem 0">
+    <div class="w" style="max-width:620px">
+      <h2 class="sh" style="color:#fff;margin-bottom:.75rem">Peça certa. Processo certo. Parceria certa.</h2>
+      <p class="sp sp--l mx tc" style="margin-bottom:2.5rem">O Grupo Nortão quer crescer junto com sua operação. Se você busca um fornecedor de peças para pickups que funcione de verdade, esse é o começo.</p>
+      <div style="display:flex;gap:.875rem;justify-content:center;flex-wrap:wrap">
+        <a href="#cadastro" class="btn btn--g btn--lg">Solicitar Parceria B2B</a>
+        <a href="https://wa.me/5500000000000?text=Olá,%20quero%20saber%20mais%20sobre%20a%20parceria%20B2B%20do%20Grupo%20Nortão." target="_blank" rel="noopener" class="btn btn--ol btn--lg">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp Comercial
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="ft">
+    <div class="w">
+      <div class="ft__in">
+        <div class="ft__logo">Grupo <span>Nortão</span> <span style="font-size:.625rem;font-family:var(--fb);color:rgba(255,255,255,.25);font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-left:.5rem">B2B</span></div>
+        <div class="ft__links"><a href="#">Política de Privacidade</a><a href="#">Termos de Uso</a><a href="#">LGPD</a></div>
+        <div class="ft__copy">© 2025 Grupo Nortão. Todos os direitos reservados.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WA FLOAT -->
+  <a href="https://wa.me/5500000000000?text=Olá,%20sou%20empresa%20e%20gostaria%20de%20saber%20sobre%20a%20parceria%20B2B." target="_blank" rel="noopener" class="waf" aria-label="WhatsApp Comercial">
+    <span class="waf__p"></span>
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script>function tF(b){const a=b.nextElementSibling,o=b.getAttribute('aria-expanded')==='true';document.querySelectorAll('.faq__q').forEach(q=>{q.setAttribute('aria-expanded','false');q.nextElementSibling.setAttribute('data-open','false')});if(!o){b.setAttribute('aria-expanded','true');a.setAttribute('data-open','true')}}</script>
+</body>
+</html>
